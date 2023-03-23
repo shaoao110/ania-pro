@@ -442,7 +442,8 @@ async def gpt(msg: Message):
     response = requests.post(url,json=data,headers=headers)
     r = json.loads(response.content.decode('utf-8'))
     await msg.reply('[gpt-3.5-turbo-0301] : ' + r['choices'][0]['message']['content'])
-    
+
+# generate image by ai
 # @bot.command(regex=r'/gimg.+')
 # async def gptimg(msg: Message):
 #     await reqFrontLogger(msg)
