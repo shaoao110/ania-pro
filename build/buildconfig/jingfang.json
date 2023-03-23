@@ -1,0 +1,52 @@
+{
+  "buildname" : "精防喷子",
+  "buildtype" : 2,
+  "mask":{
+    "name":"土狼的面具(奇特)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+13% 精英防御",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"临时做出来的手套",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+13% 精英防御"
+  },
+  "holster":{
+    "name":"临时做出来的枪套",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+13% 精英防御"
+  },
+  "kneecap":{
+    "name":"临时做出来的护膝",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+13% 精英防御"
+  },
+  "vest":{
+    "name":"影子军团(金装)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+13% 精英防御",
+    "talent":"威吓"
+  },
+  "knapsack":{
+    "name":"贝哲陶夫",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+13% 精英防御",
+    "talent":"肾上腺素爆发"
+  },
+  "weapon":{
+    "desc":"天蝎座(奇特)+拖把(具名) 天赋推荐：短兵相接"
+  }
+}

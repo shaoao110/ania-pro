@@ -1,0 +1,52 @@
+{
+  "buildname" : "",
+  "buildtype" : 1,
+  "mask":{
+    "name":"",
+    "core":"",
+    "attribute1":"",
+    "attribute2":"",
+    "plugin1":"",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"",
+    "core":"",
+    "attribute1":"",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"",
+    "core":"",
+    "attribute1":"",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"",
+    "core":"",
+    "attribute1":"",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"",
+    "core":"",
+    "attribute1":"",
+    "attribute2":"",
+    "plugin1":"",
+    "talent":""
+  },
+  "knapsack":{
+    "name":"",
+    "core":"",
+    "attribute1":"",
+    "attribute2":"",
+    "plugin1":"",
+    "talent":""
+  },
+  "weapon":{
+    "desc":""
+  }
+}

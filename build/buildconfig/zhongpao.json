@@ -1,0 +1,52 @@
+{
+  "buildname" : "极限重炮",
+  "buildtype" : 1,
+  "mask":{
+    "name":"飞龙纺织(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+10% 状态效果",
+    "plugin1":"+12% 技能加速",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"承包商手套(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+8% 对装甲的伤害",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"影子军团(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+10% 状态效果",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"影子军团(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+10% 状态效果",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"牺牲奉献(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+10% 状态效果",
+    "plugin1":"+12% 技能加速",
+    "talent":"完美玻璃大炮"
+  },
+  "knapsack":{
+    "name":"战略一致(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+10% 状态效果",
+    "plugin1":"+12% 技能加速",
+    "talent":"完美震慑"
+  },
+  "weapon":{
+    "desc":"电容突击(奇特)+拖把(具名)\n属性：击杀回复装甲+对装甲伤害\n天赋：同步伤害"
+  }
+}

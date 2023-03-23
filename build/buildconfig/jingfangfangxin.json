@@ -1,0 +1,52 @@
+{
+  "buildname" : "精防芳心",
+  "buildtype" : 2,
+  "mask":{
+    "name":"碎心(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"",
+    "plugin1":"+13% 精英防御",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"碎心(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"临时做出来的枪套",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"",
+    "plugin1":"+13% 精英防御"
+  },
+  "kneecap":{
+    "name":"临时做出来的护膝",
+    "core":"170,000 装甲值",
+    "attribute1":"+12%暴击伤害",
+    "attribute2":"",
+    "plugin1":"+13% 精英防御"
+  },
+  "vest":{
+    "name":"碎心(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+12%暴击伤害",
+    "attribute2":"",
+    "plugin1":"+13% 精英防御",
+    "talent":"极限心率(固定)"
+  },
+  "knapsack":{
+    "name":"碎心(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"+13% 精英防御",
+    "talent":"寒冷(固定)"
+  },
+  "weapon":{
+    "desc":"废王者(具名) 属性：对离开掩体目标伤害 天赋：完美停搏"
+  }
+}

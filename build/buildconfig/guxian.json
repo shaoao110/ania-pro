@@ -1,0 +1,52 @@
+{
+  "buildname" : "固线干扰脉冲",
+  "buildtype" : 1,
+  "mask":{
+    "name":"固线(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"",
+    "plugin1":"+12% 技能加速",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"BTSU数据手套(奇特)",
+    "core":"+1 技能分阶",
+    "attribute1":"+20% 技能修复",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"固线(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"固线(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"飞龙(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"+12% 技能加速",
+    "talent":"玻璃大炮"
+  },
+  "knapsack":{
+    "name":"固线(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"",
+    "plugin1":"+12% 技能加速",
+    "talent":"(固定)"
+  },
+  "weapon":{
+    "desc":"电容突击(奇特)  技能：修复蜂巢+干扰脉冲"
+  }
+}

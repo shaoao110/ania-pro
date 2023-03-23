@@ -1,0 +1,52 @@
+{
+  "buildname" : "先锋猎头狙",
+  "buildtype" : 0,
+  "mask":{
+    "name":"先锋部队(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"",
+    "plugin1":"+10% 爆头伤害",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"先锋部队(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"先锋部队(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"先锋部队(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"连环杀手(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+10% 爆头伤害",
+    "talent":"完美猎头者(固定)"
+  },
+  "knapsack":{
+    "name":"阿尔拉蒂企业(金装)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+10% 爆头伤害",
+    "talent":"警戒"
+  },
+  "weapon":{
+    "desc":"螳螂(奇特)/复仇女神(奇特) + 白色死神(具名)\n天赋推荐：游骑兵、乐天派"
+  }
+}

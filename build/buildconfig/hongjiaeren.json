@@ -1,0 +1,52 @@
+{
+  "buildname" : "流血红甲恶人",
+  "buildtype" : 2,
+  "mask":{
+    "name":"捷克出产自律组织(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"承包商手套(具名)",
+    "core":"170,000 装甲值",
+    "attribute1":"+8% 对装甲伤害(固定)",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"散兵坑悼词(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+10% 对离开掩体目标伤害(固定)",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"沃克与哈里斯企业(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"瑞吉威的骄傲(奇特)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+6% 暴击机率",
+    "talent":""
+  },
+  "knapsack":{
+    "name":"沃克与哈里斯企业(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "talent":"恶人"
+  },
+  "weapon":{
+    "desc":"FAMAS(金装) + 驯鹰人(奇特) | 天赋：虐待狂"
+  }
+}

@@ -1,0 +1,67 @@
+[
+    {
+        "name": "探子警戒金装全火(推荐)",
+        "theme": "primary",
+        "value": "tj"
+    },
+    {
+        "name": "金装全火AR(三天命)",
+        "theme": "primary",
+        "value": "qh"
+    },
+    {
+        "name": "金装全火AR(无天命)",
+        "theme": "primary",
+        "value": "qh2"
+    },
+    {
+        "name": "火体芳心",
+        "theme": "primary",
+        "value": "fx"
+    },
+    {
+        "name": "波皇塔防",
+        "theme": "primary",
+        "value": "tf"
+    },
+    {
+        "name": "追悼猎人天蝎座",
+        "theme": "primary",
+        "value": "lr"
+    },
+    {
+        "name": "极限重炮",
+        "theme": "primary",
+        "value": "zp"
+    },
+    {
+        "name": "超载增伤未来奶妈",
+        "theme": "primary",
+        "value": "nm"
+    },
+    {
+        "name": "日蚀火法控制",
+        "theme": "primary",
+        "value": "rs"
+    },
+    {
+        "name": "打牌猎头狙",
+        "theme": "primary",
+        "value": "dp"
+    },
+    {
+        "name": "先锋猎头狙",
+        "theme": "primary",
+        "value": "xf"
+    },
+    {
+        "name": "极限氧化剂",
+        "theme": "primary",
+        "value": "yhj"
+    },
+    {
+        "name": "精防喷子",
+        "theme": "primary",
+        "value": "jf"
+    }
+]

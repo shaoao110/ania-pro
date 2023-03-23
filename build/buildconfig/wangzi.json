@@ -1,0 +1,52 @@
+{
+  "buildname" : "爆头王子手枪盾",
+  "buildtype" : 0,
+  "mask":{
+    "name":"昏头涨脑(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"+6% 暴击机率",
+    "plugin1":"+10% 爆头伤害",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"承包商手套(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+8% 对装甲的伤害",
+    "attribute2":"+10% 爆头伤害",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"痞子枪套(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"+15% 武器伤害",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"散兵坑悼词(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 对离开掩体的目标伤害",
+    "attribute2":"+10% 爆头伤害",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"连环杀手(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"+6% 暴击机率",
+    "plugin1":"+10% 爆头伤害",
+    "talent":"完美猎头"
+  },
+  "knapsack":{
+    "name":"礼物(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"+6% 暴击机率",
+    "plugin1":"+10% 爆头伤害",
+    "talent":"完美警戒"
+  },
+  "weapon":{
+    "desc":"王子手枪\n可替换方案：背包可以替换为追悼包提升生存能力，枪套可替换为道奇城枪手枪套快速启动猎头buff，副词条暴击机率可替换为武器控制力以降低准星抖动"
+  }
+}

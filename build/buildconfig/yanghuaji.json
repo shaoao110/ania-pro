@@ -1,0 +1,52 @@
+{
+  "buildname" : "极限氧化剂",
+  "buildtype" : 1,
+  "mask":{
+    "name":"飞龙纺织(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"+12% 技能加速",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"承包商手套(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+8% 对装甲伤害",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"波形(奇特)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"散兵坑悼词(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 对离开掩体目标伤害",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"牺牲奉献(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"+12% 技能加速",
+    "talent":"完美玻璃大炮"
+  },
+  "knapsack":{
+    "name":"战力倍增(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"+12% 技能加速",
+    "talent":"完美联合武装"
+  },
+  "weapon":{
+    "desc":"电容突击+任意霰弹枪\n属性：对装甲伤害+对离开掩体目标伤害\n天赋：同步伤害"
+  }
+}

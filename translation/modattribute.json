@@ -1,0 +1,18 @@
+{
+    "Critical Hit Chance":"暴击机率",
+    "Critical Hit Damage":"暴击伤害",
+    "Headshot Damage":"爆头伤害",
+    "Armor on Kill":"击杀回复装甲",
+    "Bleed Resistance":"出血抗性",
+    "Blind/deaf Resistance":"致盲/眩晕抗性",
+    "Burn Resistance":"燃烧抗性",
+    "Disorient Resistance":"混乱抗性",
+    "Disrupt Resistance":"干扰抗性",
+    "Ensnare Resistance":"诱捕抗性",
+    "Incoming repairs":"受到修复",
+    "Protection from Elites":"对精英的防护",
+    "Shock Resistance":"爆炸抗性",
+    "Skill Duration":"技能持续时间",
+    "Skill Haste":"技能加速",
+    "Skill Repair":"技能修复"
+}

@@ -1,0 +1,52 @@
+{
+  "buildname" : "火体芳心",
+  "buildtype" : 2,
+  "mask":{
+    "name":"土狼的面具(奇特)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"芳心终结者(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"芳心终结者(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"芳心终结者(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"芳心终结者(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"",
+    "plugin1":"+12% 暴击伤害",
+    "talent":"极限心率(固定)"
+  },
+  "knapsack":{
+    "name":"捷克背包(金装)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "talent":"警戒"
+  },
+  "weapon":{
+    "desc":"废王者(具名) 属性：对离开掩体目标伤害 天赋：完美停搏"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "buildname" : "猎人追悼天蝎座",
+  "buildtype" : 2,
+  "mask":{
+    "name":"猎人怒火(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"",
+    "plugin1":"+6% 暴击机率",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"猎人怒火(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"猎人怒火(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"猎人怒火(装备组)",
+    "core":"170,000 装甲值",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"影子军团(金装)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+6% 暴击机率",
+    "talent":"威吓"
+  },
+  "knapsack":{
+    "name":"追悼(奇特)",
+    "core":"170,000 装甲值 +15% 武器伤害 +1 技能分阶",
+    "attribute1":"无",
+    "attribute2":"",
+    "plugin1":"+6% 暴击机率",
+    "talent":"已确认击杀(固定)"
+  },
+  "weapon":{
+    "desc":"天蝎座(奇特) | 属性：对装甲的伤害+暴击伤害 | 天赋：败血休克"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "buildname" : "超载未来奶妈",
+  "buildtype" : 1,
+  "mask":{
+    "name":"未来主动权(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+20% 技能修复",
+    "attribute2":"",
+    "plugin1":"+12% 技能加速",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"BTSU数据手套(奇特)",
+    "core":"+1 技能分阶",
+    "attribute1":"+20% 技能修复",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"未来主动权(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+20% 技能修复",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"未来主动权(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+20% 技能修复",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"未来主动权(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+20% 技能修复",
+    "attribute2":"",
+    "plugin1":"+12% 技能加速",
+    "talent":"战术优势(固定)"
+  },
+  "knapsack":{
+    "name":"阿尔卑斯山峰军事(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+20% 技能修复",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"+12% 技能加速",
+    "talent":"安全护卫"
+  },
+  "weapon":{
+    "desc":"电容突击(奇特)/美梦(奇特)+指定打击"
+  }
+}

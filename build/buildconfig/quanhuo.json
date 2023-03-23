@@ -1,0 +1,52 @@
+{
+  "buildname" : "金装全火AR(三天命)",
+  "buildtype" : 0,
+  "mask":{
+    "name":"土狼的面具(奇特)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"承包商手套(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+8% 对装甲伤害(固定)",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"天命防御公司(金装)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"散兵坑悼词(金装)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 对离开掩体目标伤害(固定)",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"天命防御公司(金装)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "talent":"磨灭性破坏"
+  },
+  "knapsack":{
+    "name":"礼物(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "talent":"完美警戒"
+  },
+  "weapon":{
+    "desc":"7号卡宾枪(金装)/警用M4(金装)/FAMAS(金装)/军规AK(金装)/驯鹰人(奇特)\n天赋：快手族/压力使然/停搏"
+  }
+}

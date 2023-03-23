@@ -1,0 +1,52 @@
+{
+  "buildname" : "中控火抗回甲",
+  "buildtype" : 2,
+  "mask":{
+    "name":"毒蜥护卫队(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+10% 危害防护",
+    "attribute2":"+4,925 装甲回复",
+    "plugin1":"+10% 燃烧抗性",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"戈蓝装备(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+10% 危害防护",
+    "attribute2":"+4,925 装甲回复",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"毒蜥护卫队(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+10% 危害防护",
+    "attribute2":"+4,925 装甲回复",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"戈蓝装备(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+10% 危害防护",
+    "attribute2":"+4,925 装甲回复",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"尖兵(具名)",
+    "core":"170,000 装甲值",
+    "attribute1":"+10% 危害防护",
+    "attribute2":"+4,925 装甲回复",
+    "plugin1":"+10% 燃烧抗性",
+    "talent":"完美先锋"
+  },
+  "knapsack":{
+    "name":"贝尔斯通(金装)",
+    "core":"170,000 装甲值",
+    "attribute1":"+10% 危害防护",
+    "attribute2":"+4,925 装甲回复",
+    "plugin1":"+10% 燃烧抗性",
+    "talent":"肾上腺素爆发"
+  },
+  "weapon":{
+    "desc":"饥饿之人(奇特)+Kard定制TDI\n技能：修复无人机+堡垒护盾" 
+  }
+}

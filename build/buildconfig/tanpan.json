@@ -1,0 +1,52 @@
+{
+  "buildname" : "谈判专注AR(AOE天花板)",
+  "buildtype" : 0,
+  "mask":{
+    "name":"土狼的面具(奇特)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"谈判者困境(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"谈判者困境(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"谈判者困境(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"捷克出产自律组织(金装)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+12% 暴击伤害",
+    "plugin1":"+12% 暴击伤害",
+    "talent":"专注"
+  },
+  "knapsack":{
+    "name":"谈判者困境(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"+12% 暴击伤害",
+    "talent":"紧急措施(固定)"
+  },
+  "weapon":{
+    "desc":"警用M4(金装) +8倍镜\n天赋：快手族"
+  }
+}

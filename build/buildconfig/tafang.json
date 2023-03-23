@@ -1,0 +1,52 @@
+{
+  "buildname" : "波皇塔防",
+  "buildtype" : 1,
+  "mask":{
+    "name":"女皇国际(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+12% 技能加速",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"+12% 技能加速",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"女皇国际(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+12% 技能加速",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"波形(奇特)",
+    "core":"+1 技能分阶",
+    "attribute1":"+12% 技能加速",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"女皇国际(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+12% 技能加速",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"飞龙/哈瑙(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+12% 技能加速",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"+12% 技能加速",
+    "talent":"玻璃大炮/动能量"
+  },
+  "knapsack":{
+    "name":"战力倍增(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 技能伤害",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"+12% 技能加速",
+    "talent":"完美联合武装"
+  },
+  "weapon":{
+    "desc":"电容突击(奇特)"
+  }
+}

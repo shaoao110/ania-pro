@@ -1,0 +1,52 @@
+{
+  "buildname" : "日蚀火法控制",
+  "buildtype" : 1,
+  "mask":{
+    "name":"卑鄙之人(奇特)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 危害防护",
+    "attribute2":"+10% 状态效果",
+    "plugin1":"+12% 技能加速",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"日蚀协定(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 状态效果",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"日蚀协定(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 状态效果",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"日蚀协定(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 状态效果",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"日蚀协定(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 状态效果",
+    "attribute2":"",
+    "plugin1":"+12% 技能加速",
+    "talent":"固定"
+  },
+  "knapsack":{
+    "name":"戈兰装备有限公司(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+10% 状态效果",
+    "attribute2":"+12% 技能加速",
+    "plugin1":"+12% 技能加速",
+    "talent":"死亡蔓延"
+  },
+  "weapon":{
+    "desc":"永恒凝视(暗区具名)"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "buildname" : "道奇城拆板套",
+  "buildtype" : 0,
+  "mask":{
+    "name":"未来/固线/谈判(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"",
+    "plugin1":"+6% 暴击机率",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"未来/固线/谈判(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"道奇城枪手枪套",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 武器控制力",
+    "attribute2":"+10% 爆头伤害",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"未来/固线/谈判(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"牺牲奉献(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"+6% 暴击机率",
+    "plugin1":"+6% 暴击机率",
+    "talent":"完美玻璃大炮"
+  },
+  "knapsack":{
+    "name":"未来/固线/谈判(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+10% 爆头伤害",
+    "attribute2":"",
+    "plugin1":"+6% 暴击机率",
+    "talent":"(固定)"
+  },
+  "weapon":{
+    "desc":"饥饿之人(奇特) + D50 对离开掩体的目标伤害  天赋：乐天派"
+  }
+}
