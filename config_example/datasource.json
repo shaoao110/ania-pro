@@ -1,7 +1,7 @@
 {
-    "host":"",
-    "port":"3306",
-    "user":"root",
-    "password":"",
-    "database":""
+    "host": "",
+    "port": "3306",
+    "user": "root",
+    "password": "",
+    "database": ""
 }
