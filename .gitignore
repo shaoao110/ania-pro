@@ -1,3 +1,4 @@
 log/
 *.gitignore
 .idea/
+config/
