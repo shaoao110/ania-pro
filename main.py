@@ -14,6 +14,8 @@ from vendor import Vendor
 import logging
 import json
 import requests
+import asyncio
+import random
 
 # init base configuration
 with open('config/config.json', 'r', encoding='utf-8') as f:
@@ -114,12 +116,11 @@ async def cronjob():
     c.append(Module.Context('在聊天框输入快捷指令即可触发Ania的功能哦~'))
     # 全火输出
     c.append(Module.Divider())
-    c.append(Module.Section({"type":"kmarkdown","content":"本次语音频道全面消杀已完成~"}))
     c.append(Module.Section({"type":"kmarkdown","content":"欢迎加入PLA大家庭，请详细阅读本频道置顶消息，如您需要帮助请@ShaoaoQAQ，本频道ID为`29278287`，以下是Ania为您提供的快捷指令"}))
-    c.append(Module.Section({"type":"kmarkdown","content":"重要通知：Ania公开测试版已停止服务，Ania正式版已上线，继承测试版用户数据，因功能调试Raid武器查询功能暂时下线"}))
     c.append(Module.Section({"type":"kmarkdown","content":"1、Ania功能菜单（全部功能快捷指令）：`/cd`"}))
     c.append(Module.Section({"type":"kmarkdown","content":"2、战队名片（如需加战队请查看）：`/pla`"}))
     c.append(Module.Section({"type":"kmarkdown","content":"3、配装表：`/pz` 萌新推荐配装指南：`/map`"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"4、Chatgpt对话请@ChatGPT"}))
     c.append(Module.Divider())
     c.append(Module.Context('Ania版本号: ' + config['version']))
     cm = CardMessage(c)
@@ -235,7 +236,7 @@ async def jiecao(msg: Message):
             logger.info("New Data : " + str(userinfo))
             await msg.add_reaction("🎉")
 
-# reno
+# check jiecao
 @bot.command(regex=r'/节操')
 async def chajiecao(msg: Message):
     userinfo = sqlMapper.getUserInfoByUserId(msg.author_id)
