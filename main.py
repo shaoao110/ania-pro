@@ -438,7 +438,7 @@ async def gpt(msg: Message):
     data = {"model":mo,"messages":me}
     logger.info("Data : " + str(data))
 
-    headers = {'Content-Type':'application/json','Authorization':'Bearer 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'}
+    headers = {'Content-Type':'application/json','Authorization':'Bearer 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'}
 
     response = requests.post(url,json=data,headers=headers)
     r = json.loads(response.content.decode('utf-8'))
