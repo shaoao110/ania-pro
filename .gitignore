@@ -1,5 +1,5 @@
-log/
-*.gitignore
-.idea/
-config/
+/log/
+/.gitignore
+/.idea/
+/config/
 
