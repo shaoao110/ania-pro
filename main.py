@@ -14,7 +14,6 @@ from vendor import Vendor
 import logging
 import json
 import requests
-import asyncio
 import random
 
 # init base configuration
@@ -474,6 +473,48 @@ async def calculate(msg: Message, expression):
     except:
         await msg.reply('表达式有误，请重新输入！')
 
+# get xiaoheihe LFG
+@bot.command(regex=r'/xhh')
+async def xiaoheihe(msg: Message):
+    await reqFrontLogger(msg)
+    url = "https://heybox.jxuan.wang/heyBox/heylist"
+    res = requests.get(url=url)
+    object = json.loads(str(res.text))
+    logger.info(str(res.text))
+    dataList = object['data']['list']
+    channel = await bot.client.fetch_public_channel(msg.target_id)
+    for i in range(10):
+        c = Card(Module.Header(dataList[i]['context']))
+        c.append(Module.Divider())
+        c.append(Module.Section('时间：' + dataList[i]['creatime']))
+        c.append(Module.Section('用户：/join ' + dataList[i]['name']))
+        cm = CardMessage(c)
+        await bot.client.send(channel,cm)
+
+# td2 vendor
+@bot.command(regex='/xhh.+')
+async def xiaoheihe2(msg: Message):
+    await reqFrontLogger(msg)
+    keyword = msg.content.split(' ')[1]
+
+    url = "https://heybox.jxuan.wang/heyBox/heylist"
+    res = requests.get(url=url)
+    object = json.loads(str(res.text))
+    logger.info(str(res.text))
+    count = 0
+    dataList = object['data']['list']
+    channel = await bot.client.fetch_public_channel(msg.target_id)
+    for i in dataList:
+        if keyword in i['context']: 
+            c = Card(Module.Header(i['context']))
+            c.append(Module.Divider())
+            c.append(Module.Section('时间：' + i['creatime']))
+            c.append(Module.Section('用户：/join ' + i['name']))
+            cm = CardMessage(c)
+            await bot.client.send(channel,cm)
+            count += 1
+            if count == 10:
+                break  
 
 bot.run()
 
