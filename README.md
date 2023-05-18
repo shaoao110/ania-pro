@@ -9,7 +9,7 @@ Ania Pro 是一个基于开黑啦机器人的聊天机器人，可以实现以�
 
 ## 安装依赖
 
-1. 安装 khl.py SDK
+1. 安装 khl.py SDK （版本 ≥ 0.3.15）
 
    ```bash
    pip install khl.py
@@ -29,12 +29,13 @@ Ania Pro 是一个基于开黑啦机器人的聊天机器人，可以实现以�
    ```bash
    mv config_example config
    ```
-   在 `config.py` 文件中配置数据库信息。
+   在 `config.json` 文件中配置基础信息。
+   在 `datasource.json` 文件中配置数据库信息。
 
 3. 启动机器人
 
    ```bash
-   sh restart.sh
+   sh ./restart.sh
    ```
 
 ## 功能
