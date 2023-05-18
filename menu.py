@@ -14,7 +14,7 @@ class Menu():
         remark = '全境封锁系列语音频道定制菜单'
     for record in menutype:
         func += record['func'] + "\n"
-        comm += "`" + record['comm'] + "`\n"
+        comm += record['comm'] + "\n"
     c = Card()
     c = Card(Module.Header('阿妮亚功能菜单'), color='#FFCC00')
     c.append(Module.Context(remark))
@@ -38,16 +38,19 @@ class Menu():
 menuCommands = [
   {
     "func":"功能菜单",
-    "comm":"/cd` `/menu"
+    "comm":"/cd 或 /menu"
   },{
     "func":"签到",
     "comm":"/qd"
   },{
     "func":"战队名片",
-    "comm":"/zd` `/pla"
+    "comm":"/zd 或 /pla"
+  },{
+    "func":"战队Raid武器查询",
+    "comm":"/td2raid ?"
   },{
     "func":"每周商人查询",
-    "comm":"/zs` `/周商"
+    "comm":"/zs 或 /周商"
   },{
     "func":"萌新配装路线图",
     "comm":"/map"
@@ -80,7 +83,7 @@ menuCommands = [
     "comm":"/技能"
   },{
     "func":"白区活动经验",
-    "comm":"/jy` `活动经验"
+    "comm":"/jy 或 活动经验"
   },{
     "func":"服务器状态",
     "comm":"/server"
@@ -89,7 +92,7 @@ menuCommands = [
     "comm":"/绑定<空格><游戏角色名>"
   },{
     "func":"发送游戏邀请",
-    "comm":"/id` `/名片"
+    "comm":"/id 或 /名片"
   },{
     "func":"查询玩家数据",
     "comm":"/查询<空格><游戏角色名>"
@@ -98,23 +101,23 @@ menuCommands = [
     "comm":"/raid"
   },{
     "func":"赛季日历",
-    "comm":"/rl` `日历` `赛季日历"
+    "comm":"/rl 或 日历 或 赛季日历"
   },{
     "func":"暗区箱子地图",
-    "comm":"/aq` `暗区"
+    "comm":"/aq 或 暗区"
   }
 ]
 #全境封锁系列语音频道定制菜单
 menuCommands2 = [
   {
     "func":"功能菜单",
-    "comm":"/cd` `/menu"
+    "comm":"/cd 或 /menu"
   },{
     "func":"签到",
     "comm":"/qd"
   },{
     "func":"每周商人查询",
-    "comm":"/zs` `/周商"
+    "comm":"/zs 或 /周商"
   },{
     "func":"萌新配装路线图",
     "comm":"/map"
@@ -147,7 +150,7 @@ menuCommands2 = [
     "comm":"/技能"
   },{
     "func":"白区活动经验",
-    "comm":"/jy` `活动经验"
+    "comm":"/jy 或 活动经验"
   },{
     "func":"服务器状态",
     "comm":"/server"
@@ -156,15 +159,15 @@ menuCommands2 = [
     "comm":"/绑定<空格><游戏角色名>"
   },{
     "func":"发送游戏邀请",
-    "comm":"/id` `/名片"
+    "comm":"/id 或 /名片"
   },{
     "func":"查询玩家数据",
     "comm":"/查询<空格><游戏角色名>"
   },{
     "func":"赛季日历",
-    "comm":"/rl` `日历` `赛季日历"
+    "comm":"/rl 或 日历 或 赛季日历"
   },{
     "func":"暗区箱子地图",
-    "comm":"/aq` `暗区"
+    "comm":"/aq 或 暗区"
   }
 ]
