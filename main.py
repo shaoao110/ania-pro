@@ -105,7 +105,7 @@ async def menu(msg: Message):
     channel = await bot.client.fetch_public_channel(msg.target_id)
     if channel.guild_id == config["pla_guild_id"]:
         await msg.reply(Menu().getMenu("1"))
-    if channel.guild_id == config["tieba_guild_id"]:
+    else:
         await msg.reply(Menu().getMenu("2"))
 
 # cronjob
@@ -514,7 +514,138 @@ async def xiaoheihe2(msg: Message):
             await bot.client.send(channel,cm)
             count += 1
             if count == 10:
-                break  
+                break
+
+@bot.command(regex=r'/td2raid')
+async def searchRaidWeapon(msg: Message):
+    await reqFrontLogger(msg)
+    channel = await bot.client.fetch_public_channel(msg.target_id)
+    if channel.guild_id != config["pla_guild_id"]:
+        return
+    recentRecord = sqlMapper.getRecentRaidWeapon('%%')
+    logger.info(str(recentRecord))
+    name = ""
+    player = ""
+    time = ""
+    for record in recentRecord:
+        name += record['weapon'] + "\n"
+        player += record['player'] + "\n"
+        time += record['droptime'] + "\n"
+    c = Card(Module.Header('PLA Raid Weapon History'), color='#ff9900')
+    c.append(Module.Context('Ania-pro ' + config['version'] + ' PLA战队专用'))
+    c.append(
+        Module.Section({
+            "type":"paragraph",
+            "cols":3,
+            "fields": [{
+                "type": "kmarkdown",
+                "content": "**武器**\n" + name
+            }, {
+                "type": "kmarkdown",
+                "content": "**玩家**\n" + player
+            }, {
+                "type": "kmarkdown",
+                "content": "**获取时间**\n" + time
+            }]
+        }))
+    cm = CardMessage(c)
+    await msg.reply(cm)
+
+@bot.command(regex='/td2raid.+')
+async def modifyRaidWeapon(msg: Message):
+    await reqFrontLogger(msg)        
+    content = msg.content.split(' ')
+    type = content[1]
+    if type == '?' or type == '？' or type == 'help':
+        c = Card(Module.Header('PLA Raid武器获取查询工具帮助菜单:'),color="ff9900")
+        c.append(Module.Context('在聊天框输入快捷指令即可触发对应功能~'))
+        c.append(Module.Divider())
+        c.append(Module.Section({"type":"kmarkdown","content":"1、查询工具菜单：`/td2raid ?`"}))
+        c.append(Module.Section({"type":"kmarkdown","content":"2、查询最近20条获取记录：`/td2raid`"}))
+        c.append(Module.Section({"type":"kmarkdown","content":"3、模糊查询获取记录：`/td2raid find [玩家]`"}))
+        c.append(Module.Section({"type":"kmarkdown","content":"4、Raid武器获取排名：`/td2raid rank`"}))
+        c.append(Module.Divider())
+        c.append(Module.Context('Ania-pro ' + config['version']))
+        cm = CardMessage(c)
+        await msg.reply(cm)
+    # 删除倒数N条记录
+    # /td2raid delete [删除条数]
+    if type == 'delete':
+        if msg.author.id != '1595665465':
+            await msg.reply('您无权进行此操作')
+            return;
+        sqlMapper.deleteNRaidWeaponRecord(int(content[2]))
+        await msg.reply('ok')
+    # 新增一条武器记录
+    # /td2raid add [武器名称] [玩家] [日期yyyy-MM-dd] [时间 HH:mm]
+    if type == 'add':
+        if msg.author.id != '1595665465':
+            await msg.reply('您无权进行此操作')
+            return;
+        sqlMapper.insertNewRaidWeaponRecord(content[2],content[3],content[4] + ' ' + content[5])
+        await msg.reply('ok')
+    # 查询指定玩家武器记录
+    # /td2raid find [玩家]
+    if type == 'find':
+        recentRecord = sqlMapper.getRecentRaidWeapon('%' + content[2] + '%')
+        logger.info(str(recentRecord))
+        name = ""
+        player = ""
+        time = ""
+        for record in recentRecord:
+            name += record['weapon'] + "\n"
+            player += record['player'] + "\n"
+            time += record['droptime'] + "\n"
+        c = Card(Module.Header('PLA Raid Weapon History Search By \'' + content[2] + '\''), color='#ff9900')
+        c.append(Module.Context('Ania-pro ' + config['version'] + ' PLA战队专用'))
+        c.append(
+            Module.Section({
+                "type":"paragraph",
+                "cols":3,
+                "fields": [{
+                    "type": "kmarkdown",
+                    "content": "**武器**\n" + name
+                }, {
+                   "type": "kmarkdown",
+                    "content": "**玩家**\n" + player
+                }, {
+                    "type": "kmarkdown",
+                    "content": "**获取时间**\n" + time
+                }]
+        }))
+        cm = CardMessage(c)
+        await msg.reply(cm)
+    # 查询raid武器排行
+    # td2raid rank
+    if type == 'rank':
+        rankData = sqlMapper.getRaidWeaponRank()
+        logger.info(str(rankData))
+        player = ""
+        sumNum = ""
+        nj = ""
+        for record in rankData:
+            player += record['player'] + "\n"
+            sumNum += str(record['sumNum']) + "\n"
+            nj += str(record['niao']) + " / " + str(record['ji']) + "\n"
+        c = Card(Module.Header('PLA Raid Weapon Rank'), color='#ff9900')
+        c.append(Module.Context('Ania-pro ' + config['version'] + ' PLA战队专用 仅武器总数大于1可上榜'))
+        c.append(
+            Module.Section({
+                "type":"paragraph",
+                "cols":3,
+                "fields": [{
+                    "type": "kmarkdown",
+                    "content": "**玩家**\n" + player
+                }, {
+                    "type": "kmarkdown",
+                    "content": "**武器总数**\n" + sumNum
+                }, {
+                    "type": "kmarkdown",
+                    "content": "**驯鹰人/饥饿之人**\n" + nj
+                }]
+            }))
+        cm = CardMessage(c)
+        await msg.reply(cm)
 
 bot.run()
 

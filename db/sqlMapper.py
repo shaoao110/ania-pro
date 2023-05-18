@@ -134,3 +134,59 @@ class SqlMapper():
         cursor.execute(sql,param)
         cnct.commit()
         cnct.close()
+
+    def getRecentRaidWeapon(self,player) -> object:
+        cnct = mysql.connector.connect(host=dbconf['host'],port=dbconf['port'],user=dbconf['user'],password=dbconf['password'],database=dbconf['database'])
+        cursor = cnct.cursor(dictionary=True)
+        sql = "select * from tb_raid_weapon where player like %(player)s order by droptime desc limit 20"
+        param = {"player":player}
+        cursor.execute(sql,param)
+        data = cursor.fetchall()
+        print(data)
+        cnct.close()
+        if data:
+            return data
+        else:
+            data = []
+            return data
+
+    def insertNewRaidWeaponRecord(self,weapon,player,droptime):
+        cnct = mysql.connector.connect(host=dbconf['host'],port=dbconf['port'],user=dbconf['user'],password=dbconf['password'],database=dbconf['database'])
+        cursor = cnct.cursor()
+        sql = "insert into tb_raid_weapon (weapon,player,droptime) values (%(weapon)s,%(player)s,%(droptime)s)"
+        param = {
+            "weapon":weapon,
+            "player":player,
+            "droptime":droptime
+        }
+        print(param)
+        cursor.execute(sql,param)
+        cnct.commit()
+        cnct.close()
+
+    def deleteNRaidWeaponRecord(self,count):
+        cnct = mysql.connector.connect(host=dbconf['host'],port=dbconf['port'],user=dbconf['user'],password=dbconf['password'],database=dbconf['database'])
+        cursor = cnct.cursor()
+        sql = "delete from tb_raid_weapon order by id desc limit %(count)s"
+        param = {
+            "count":count
+        }
+        print(param)
+        cursor.execute(sql,param)
+        cnct.commit()
+        cnct.close()
+    
+    def getRaidWeaponRank(self) -> object:
+        cnct = mysql.connector.connect(host=dbconf['host'],port=dbconf['port'],user=dbconf['user'],password=dbconf['password'],database=dbconf['database'])
+        cursor = cnct.cursor(dictionary=True)
+        sql = "select player player, count(1) sumNum, sum((case weapon when '驯鹰人' then 1 else 0 end)) niao, sum((case weapon when '饥饿之人' then 1 else 0 end)) ji from tb_raid_weapon GROUP BY player HAVING count(1) > 1 ORDER BY count(1) DESC"
+        param = {}
+        cursor.execute(sql,param)
+        data = cursor.fetchall()
+        print(data)
+        cnct.close()
+        if data:
+            return data
+        else:
+            data = []
+            return data
