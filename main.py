@@ -571,7 +571,7 @@ async def modifyRaidWeapon(msg: Message):
     # 删除倒数N条记录
     # /td2raid delete [删除条数]
     if type == 'delete':
-        if msg.author.id != '1595665465':
+        if msg.author.id != config['admin-user-id']:
             await msg.reply('您无权进行此操作')
             return;
         sqlMapper.deleteNRaidWeaponRecord(int(content[2]))
@@ -579,7 +579,7 @@ async def modifyRaidWeapon(msg: Message):
     # 新增一条武器记录
     # /td2raid add [武器名称] [玩家] [日期yyyy-MM-dd] [时间 HH:mm]
     if type == 'add':
-        if msg.author.id != '1595665465':
+        if msg.author.id != config['admin-user-id']:
             await msg.reply('您无权进行此操作')
             return;
         sqlMapper.insertNewRaidWeaponRecord(content[2],content[3],content[4] + ' ' + content[5])

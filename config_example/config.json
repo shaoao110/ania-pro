@@ -1,7 +1,7 @@
 {
-	"token":"",
-	"version":"1.0.0.00",
-	"comment":"",
+	"token":"<your kook bot token>",
+	"version":"1.0.1.00",
+	"comment":"<version description>",
 	"td2-instance-status-url" : "https://game-status-api.ubisoft.com/v1/instances?appIds=6c6b8cd7-d901-4cd5-8279-07ba92088f06%2C6f220906-8a24-4b6a-a356-db5498501572%2C7d9bbf16-d76d-43e1-9e82-1e64b4dd5543",
 	"test-role-id" : "",
 	"dtygk-role-days" : 30,
@@ -9,10 +9,11 @@
 	"xxfgr-role-days" : 90,
 	"xxfgr-role-id" : "",
 	"td2gameid": 39,
-	"guild_id": "",
+	"guild_id": "<your kook guild id>",
 	"auto_sign_channel_id": "",
 	"public_channel_id": "",
-	"pla_guild_id": "",
+	"pla_guild_id": "<your kook guild id>",
 	"tieba_guild_id": "",
-	"openai-api-key": "<your openai apikey>"
+	"openai-api-key": "<your openai apikey>",
+	"admin-user-id": "<your kook userid>"
 }
