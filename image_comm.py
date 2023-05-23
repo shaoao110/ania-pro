@@ -63,7 +63,7 @@ class ImageServe():
             @bot.command(regex=r'/rl|日历|赛季日历')
             async def calane(msg: Message):
                 await reqFrontLogger(msg,bot)
-                url = await bot.client.create_asset('./img/calander.jpg')
+                url = await bot.client.create_asset('./img/calander_season11.png')
                 await msg.reply(url, type=MessageTypes.IMG)
 
             # 赛季日历
