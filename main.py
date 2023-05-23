@@ -211,8 +211,7 @@ async def reno(msg: Message):
 @bot.command(regex=r'整个活.+', rules={Rule.is_bot_mentioned(bot)})
 async def hulue(msg: Message):
     await reqFrontLogger(msg)
-    channel = await bot.fetch_public_channel(msg.target_id)
-    await bot.client.send(channel, '草！走！忽略！ ጿ ኈ ቼ ዽ ጿ')
+    await msg.ctx.channel.send('草！走！忽略！ ጿ ኈ ቼ ዽ ጿ')
 
 @bot.command(regex=r'您好.+|请问.+|谢谢.+|麻烦了.+|辛苦您.+|辛苦了.+|抱歉.+|不好意思.+|欢迎.+')
 async def jiecao(msg: Message):
@@ -482,14 +481,13 @@ async def xiaoheihe(msg: Message):
     object = json.loads(str(res.text))
     logger.info(str(res.text))
     dataList = object['data']['list']
-    channel = await bot.client.fetch_public_channel(msg.target_id)
     for i in range(10):
         c = Card(Module.Header(dataList[i]['context']))
         c.append(Module.Divider())
         c.append(Module.Section('时间：' + dataList[i]['creatime']))
         c.append(Module.Section('用户：/join ' + dataList[i]['name']))
         cm = CardMessage(c)
-        await bot.client.send(channel,cm)
+        await msg.ctx.channel.send(cm)
 
 # td2 vendor
 @bot.command(regex='/xhh.+')
@@ -503,7 +501,6 @@ async def xiaoheihe2(msg: Message):
     logger.info(str(res.text))
     count = 0
     dataList = object['data']['list']
-    channel = await bot.client.fetch_public_channel(msg.target_id)
     for i in dataList:
         if keyword in i['context']: 
             c = Card(Module.Header(i['context']))
@@ -511,7 +508,7 @@ async def xiaoheihe2(msg: Message):
             c.append(Module.Section('时间：' + i['creatime']))
             c.append(Module.Section('用户：/join ' + i['name']))
             cm = CardMessage(c)
-            await bot.client.send(channel,cm)
+            await msg.ctx.channel.send(cm)
             count += 1
             if count == 10:
                 break
@@ -549,7 +546,7 @@ async def searchRaidWeapon(msg: Message):
             }]
         }))
     cm = CardMessage(c)
-    await msg.reply(cm)
+    await msg.ctx.channel.send(cm)
 
 @bot.command(regex='/td2raid.+')
 async def modifyRaidWeapon(msg: Message):
@@ -614,7 +611,7 @@ async def modifyRaidWeapon(msg: Message):
                 }]
         }))
         cm = CardMessage(c)
-        await msg.reply(cm)
+        await msg.ctx.channel.send(cm)
     # 查询raid武器排行
     # td2raid rank
     if type == 'rank':
@@ -645,7 +642,7 @@ async def modifyRaidWeapon(msg: Message):
                 }]
             }))
         cm = CardMessage(c)
-        await msg.reply(cm)
+        await msg.ctx.channel.send(cm)
 
 bot.run()
 
