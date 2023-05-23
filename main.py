@@ -49,7 +49,7 @@ logger.addHandler(log_handel)
 async def reqFrontLogger(msg:Message):
     cont = "Channel:" + msg.target_id + " | Command request:" + msg.content + " | userid:" +  msg.author.id + " | userName:" + msg.author.username + '#' + msg.author.identify_num + " | time:" + (datetime.now() + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')
     logger.info(cont)
-    chan = await bot.client.fetch_public_channel("7678231813152563")
+    chan = await bot.client.fetch_public_channel(config['command-log-channel-id'])
     await bot.client.send(chan, cont)
 
 def getLivingRoom(obj):

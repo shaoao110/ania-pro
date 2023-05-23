@@ -15,5 +15,6 @@
 	"pla_guild_id": "<your kook guild id>",
 	"tieba_guild_id": "",
 	"openai-api-key": "<your openai apikey>",
-	"admin-user-id": "<your kook userid>"
+	"admin-user-id": "<your kook userid>",
+	"command-log-channel-id": ""
 }

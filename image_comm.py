@@ -1,13 +1,18 @@
 from khl import Bot,Message,MessageTypes
 from datetime import timedelta, datetime
 import logging
+import json
 
 logger = logging.getLogger()
+
+# init base configuration
+with open('config/config.json', 'r', encoding='utf-8') as f:
+    config = json.load(f)
 
 async def reqFrontLogger(msg:Message,bot:Bot):
     cont = "Channel:" + msg.target_id + " | Command request:" + msg.content + " | userid:" +  msg.author.id + " | userName:" + msg.author.username + '#' + msg.author.identify_num + " | time:" + (datetime.now() + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S')
     logger.info(cont)
-    chan = await bot.client.fetch_public_channel("7678231813152563")
+    chan = await bot.client.fetch_public_channel(config['command-log-channel-id'])
     await bot.client.send(chan, cont)
 
 class ImageServe():
