@@ -23,14 +23,17 @@ Ania Pro 是一个基于开黑啦机器人的聊天机器人，可以实现以�
 
 ## 运行
 
-1. 配置数据库
+1. 配置机器人
 
-   
    ```bash
    mv config_example config
    ```
    在 `config.json` 文件中配置基础信息。
    在 `datasource.json` 文件中配置数据库信息。
+
+2. 构建数据库
+
+   在Mysql数据库中执行 `aniapro_ddl.sql`初始化脚本
 
 3. 启动机器人
 
