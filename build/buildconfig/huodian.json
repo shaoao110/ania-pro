@@ -1,0 +1,52 @@
+{
+  "buildname" : "忍者包7火6电抹灭突袭",
+  "buildtype" : 1,
+  "mask":{
+    "name":"突袭(装备组)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"",
+    "plugin1":"+6% 暴击机率",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"突袭(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"痞子枪套(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+15% 武器伤害",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"突袭(装备组)",
+    "core":"+1 技能分阶",
+    "attribute1":"+12% 暴击伤害",
+    "attribute2":"",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"影子军团(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+15% 武器伤害",
+    "plugin1":"+6% 暴击机率",
+    "talent":"抹灭性破坏"
+  },
+  "knapsack":{
+    "name":"忍者包(奇特)",
+    "core":"170,000 装甲值 +15% 武器伤害 +1 技能分阶",
+    "attribute1":"无",
+    "attribute2":"",
+    "plugin1":"+6% 暴击机率",
+    "talent":"足智多谋(固定)"
+  },
+  "weapon":{
+    "desc":"电容突击(奇特)+拖把(具名)\n属性：击杀回复装甲+对装甲伤害\n天赋：同步伤害\n专精：技师（+1技能分阶）"
+  }
+}

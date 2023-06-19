@@ -1,12 +1,12 @@
 {
-  "buildname" : "全火突袭(版本之子)",
+  "buildname" : "雷神突袭(T0全火)",
   "buildtype" : 0,
   "mask":{
     "name":"土狼的面具(奇特)",
     "core":"+15% 武器伤害",
     "attribute1":"+6% 暴击机率",
     "attribute2":"+12% 暴击伤害",
-    "plugin1":"+6% 暴击机率",
+    "plugin1":"+12% 暴击伤害",
     "plugin2":""
   },
   "gloves":{
@@ -35,7 +35,7 @@
     "core":"+15% 武器伤害",
     "attribute1":"+6% 暴击机率",
     "attribute2":"+12% 暴击伤害",
-    "plugin1":"+6% 暴击机率",
+    "plugin1":"+12% 暴击伤害",
     "talent":"抹灭性破坏"
   },
   "knapsack":{
@@ -43,10 +43,10 @@
     "core":"+15% 武器伤害",
     "attribute1":"+12% 暴击伤害",
     "attribute2":"",
-    "plugin1":"+6% 暴击机率",
+    "plugin1":"+12% 暴击伤害",
     "talent":"（固定）"
   },
   "weapon":{
-    "desc":"FAMAS/警用M4/军规AK/黑市AK/七号卡宾枪 + ACS12\n天赋：快手族"
+    "desc":"圣艾尔莫引擎 + ACS12\n天赋：快手族"
   }
 }

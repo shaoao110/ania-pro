@@ -1,0 +1,52 @@
+{
+  "buildname" : "忍者包火电重炮",
+  "buildtype" : 1,
+  "mask":{
+    "name":"中国光能(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"+12% 暴击伤害",
+    "plugin2":""
+  },
+  "gloves":{
+    "name":"沃克(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"无"
+  },
+  "holster":{
+    "name":"痞子枪套(具名)",
+    "core":"+1 技能分阶",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+15% 武器伤害",
+    "plugin1":"无"
+  },
+  "kneecap":{
+    "name":"影子军团(金装)",
+    "core":"+1 技能分阶",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+10% 技能伤害",
+    "plugin1":"无"
+  },
+  "vest":{
+    "name":"牺牲奉献(具名)",
+    "core":"+15% 武器伤害",
+    "attribute1":"+6% 暴击机率",
+    "attribute2":"+15% 武器伤害",
+    "plugin1":"+12% 暴击伤害",
+    "talent":"完美玻璃大炮"
+  },
+  "knapsack":{
+    "name":"忍者包(奇特)",
+    "core":"170,000 装甲值 +15% 武器伤害 +1 技能分阶",
+    "attribute1":"无",
+    "attribute2":"",
+    "plugin1":"+6% 暴击伤害",
+    "talent":"足智多谋(固定)"
+  },
+  "weapon":{
+    "desc":"电容突击(奇特)+拖把(具名)\n属性：击杀回复装甲+对装甲伤害\n天赋：同步伤害\n专精：爆破专家（重炮）"
+  }
+}

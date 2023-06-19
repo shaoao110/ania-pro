@@ -1,0 +1,52 @@
+{
+    "buildname" : "烈焰哈堡坚果狙(T0暴力无脑)",
+    "buildtype" : 0,
+    "mask":{
+      "name":"烈焰大炮(装备组)",
+      "core":"+15% 武器伤害",
+      "attribute1":"+10% 爆头伤害",
+      "attribute2":"",
+      "plugin1":"+10% 爆头伤害",
+      "plugin2":""
+    },
+    "gloves":{
+      "name":"承包商手套(具名)",
+      "core":"+15% 武器伤害",
+      "attribute1":"+8% 对装甲伤害",
+      "attribute2":"+10% 爆头伤害",
+      "plugin1":"无"
+    },
+    "holster":{
+      "name":"哈布斯堡(金装)",
+      "core":"+15% 武器伤害",
+      "attribute1":"+10% 爆头伤害",
+      "attribute2":"+8% 武器控制力",
+      "plugin1":"无"
+    },
+    "kneecap":{
+      "name":"烈焰大炮(装备组)",
+      "core":"+15% 武器伤害",
+      "attribute1":"+10% 爆头伤害",
+      "attribute2":"",
+      "plugin1":"无"
+    },
+    "vest":{
+      "name":"阿尔拉蒂(金装)",
+      "core":"+15% 武器伤害",
+      "attribute1":"+10% 爆头伤害",
+      "attribute2":"+8% 武器控制力",
+      "plugin1":"+10% 爆头伤害",
+      "talent":"猎头者"
+    },
+    "knapsack":{
+      "name":"哈布斯堡(金装)",
+      "core":"+15% 武器伤害",
+      "attribute1":"+10% 爆头伤害",
+      "attribute2":"+8% 武器控制力",
+      "plugin1":"+10% 爆头伤害",
+      "talent":"警戒"
+    },
+    "weapon":{
+      "desc":"白色死神(具名) 天赋：坚决果断"
+    }
+  }
