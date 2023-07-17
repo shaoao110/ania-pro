@@ -2,6 +2,7 @@ from khl import Bot, Message, MessageTypes, EventTypes, Event,ChannelTypes
 from khl.card import CardMessage, Card, Module, Element
 from khl.command.rule import Rule
 from logging.handlers import TimedRotatingFileHandler
+from khl.channel import PublicVoiceChannel
 from datetime import timedelta, datetime
 from build.builds import BuildList
 from db.sqlMapper import SqlMapper
@@ -123,7 +124,7 @@ async def cronjob():
     c.append(Module.Divider())
     c.append(Module.Context('Ania版本号: ' + config['version']))
     cm = CardMessage(c)
-    channel = await bot.client.fetch_public_channel(config['public_channel_id'])
+    channel = await bot.client.fetch_public_channel(config['public_text_channel_id'])
     await bot.client.send(channel,cm)
 
 # show td2 pve buildList
@@ -166,8 +167,10 @@ async def pla(msg: Message):
     await reqFrontLogger(msg)
     c = Card(Module.Header('[PLA]战队卡片'), color='#ff9900')
     c.append(Module.Divider())
-    c.append(Module.Section({"type":"kmarkdown","content":"主队队名：`CPLASFOFCHINA`  (入队要求手表2000级)"}))
-    c.append(Module.Section({"type":"kmarkdown","content":"二队队名：`Peanut Agents`  (无要求)"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"主队队名：`CPLASFOFCHINA`  (未开放纳新)"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"二队队名：`Peanut Agents`  (无要求，暂满)"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"三队队名：`Peanuts Agent`  (无要求，暂满)"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"四队队名：`Peanute Agent`  (无要求)"}))
     c.append(Module.Section({"type":"kmarkdown","content":"QQ群号：`136932781`"}))
     c.append(Module.Section({"type":"kmarkdown","content":"KOOK语音频道ID：`29278287`"}))
     c.append(Module.Section({"type":"kmarkdown","content":"开挂、速成玩家请勿入队，谢谢合作！入队审核，其他咨询(met)1595665465(met)"}))
@@ -396,8 +399,17 @@ async def auto_signin(b: Bot, event: Event):
         guild = await bot.client.fetch_guild(config['guild_id'])
         user = await bot.client.fetch_user(event.body['user_id'])
         channelname = user.username + ' 的自习室'
-        voiceChannel = await bot.client.create_voice_channel(channelname,guild,'1269596120540644',1,2)
+        voiceChannel = await bot.client.create_voice_channel(channelname,guild,'2057963894610303',1,2)
         await voiceChannel.move_user(user.id)
+    if event.body['channel_id'] == '1186270422261504':
+        guild = await bot.client.fetch_guild(config['guild_id'])
+        user = await bot.client.fetch_user(event.body['user_id'])
+        now = (datetime.now())
+        ti = now.strftime("%H%M%S")
+        channelname = '⭕ 临时作战室' + ti
+        voiceChannel = await bot.client.create_voice_channel(channelname,guild,'1269596120540644',15,2)
+        await voiceChannel.move_user(user.id)
+    
 
 # auto delete room
 @bot.on_event(EventTypes.EXITED_CHANNEL)
@@ -405,6 +417,13 @@ async def auto_delete_channel(b: Bot, event: Event):
     channel = await bot.client.fetch_public_channel(event.body['channel_id'])
     if('的自习室' in channel.name):
         await bot.client.delete_channel(channel)
+    if('临时作战室' in channel.name):
+        vchannel = PublicVoiceChannel(_gate_=bot.client.gate, id=event.body['channel_id'])
+        users = await vchannel.fetch_user_list()
+        for user in users:
+            logger.info("User In Channel : " + str(user))
+        if not users:
+            await bot.client.delete_channel(channel)
 
 # set welcome words
 @bot.command(name='welcome')
@@ -506,7 +525,7 @@ async def xiaoheihe2(msg: Message):
             c = Card(Module.Header(i['context']))
             c.append(Module.Divider())
             c.append(Module.Section('时间：' + i['creatime']))
-            c.append(Module.Section('用户：/join ' + i['name']))
+            c.append(Module.Section('用户：/j ' + i['name']))
             cm = CardMessage(c)
             await msg.ctx.channel.send(cm)
             count += 1

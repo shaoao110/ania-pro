@@ -19,6 +19,12 @@ class ImageServe():
     def __init__(self, bot):
         if bot != None:
             # 待丰富
+            @bot.command(name='逃出升天奖励')
+            async def tcstjl(msg: Message):
+                await reqFrontLogger(msg,bot)
+                # url = await bot.client.create_asset('./img/descentRewards.png')
+                await msg.reply('https://img.kookapp.cn/attachments/2023-06/26/1PSbImZod00fg0so.png', type=MessageTypes.IMG)
+
             @bot.command(name='奇特武器')
             async def exoticwp(msg: Message):
                 await reqFrontLogger(msg,bot)

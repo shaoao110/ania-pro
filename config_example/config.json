@@ -12,6 +12,7 @@
 	"guild_id": "<your kook guild id>",
 	"auto_sign_channel_id": "",
 	"public_channel_id": "",
+	"public_text_channel_id": "",
 	"pla_guild_id": "<your kook guild id>",
 	"tieba_guild_id": "",
 	"openai-api-key": "<your openai apikey>",

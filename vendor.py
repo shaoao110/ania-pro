@@ -20,6 +20,10 @@ with open('translation/geartype.json', 'r', encoding='utf-8') as f:
     trans_geartype = json.load(f)
 with open('translation/modattribute.json', 'r', encoding='utf-8') as f:
     trans_modattr = json.load(f)
+with open('translation/skillname.json', 'r', encoding='utf-8') as f:
+    trans_skillname = json.load(f)
+with open('translation/weapontalent.json', 'r', encoding='utf-8') as f:
+    trans_weapontalent = json.load(f)
 
 class Vendor():
     def getGear(self,start) -> CardMessage:
@@ -112,7 +116,10 @@ class Vendor():
             item += "\n属性1：" + gear['attribute1'].split(">")[-1]
             item += "\n属性2：" + gear['attribute2'].split(">")[-1]
             item += "\n属性3：" + gear['attribute3'].split(">")[-1]
-            item += "\n天赋：" + gear['talent']
+            weapontalentEn = gear['talent']
+            if weapontalentEn in trans_weapontalent:
+                weapontalentEn = trans_weapontalent[weapontalentEn]
+            item += "\n天赋：" + weapontalentEn
             item += "\n```"
             c.append(Module.Section({"type":"kmarkdown","content":item}))
         cm = CardMessage(c)
@@ -131,11 +138,18 @@ class Vendor():
             item = "```js\n插件名称：" + gear['name']
             item += "\n商人：" + vendorEn
 
+            skill = ''
+            if "<br/>" in gear['attributes']:
+                skill = gear['attributes'].split("<br/>")[0].strip()
+                if skill in trans_skillname:
+                    skill = trans_skillname[skill] + "："
+                else:
+                    skill = skill + ":"
             mattrEn = gear['attributes'].split(">")[-1].strip()
             mattrList = mattrEn.split(" ",1)
             if mattrList[-1] in trans_modattr:
                 mattrEn = mattrList[0] + " " + trans_modattr[mattrList[-1]]
-            item += "\n属性：" + mattrEn
+            item += "\n属性：" + skill + mattrEn
             item += "\n```"
             c.append(Module.Section({"type":"kmarkdown","content":item}))
         cm = CardMessage(c)
