@@ -21,7 +21,7 @@ class Signin():
             signinfo = sqlMapper.getSigninByUserId(userid)
         except Exception as e:
             logger.error(e)
-            return '`用户信息获取异常，请联系管理员！`'
+            return '，用户信息获取异常，请联系管理员！' + "|Error|Error|Error|Error"
 
         try:
             logger.info("Old Data : " + str(signinfo))
@@ -37,36 +37,48 @@ class Signin():
               # 更新数据库
               sqlMapper.updateSigninByUserId(signinfo)
               logger.info("New Data : " + str(signinfo))
-              return '`签到成功！已累计签到1天，连续签到1天，感谢您首次在本频道签到！`' + "|1|1|0"
+              #增加5个节操
+              userinfo = sqlMapper.getUserInfoByUserId(userid)
+              userinfo['jiecao'] += 5
+              sqlMapper.updateUserInfo(userinfo)
+              logger.info("New Data : " + str(userinfo))
+              return '，签到成功（节操+5）！感谢您首次在本频道签到！' + "|1|1|0|--"
             # 如果上次签到是今天
             if ti == lasttime:
                 logger.info("Data No Change")
-                tempstr = '|' + str(signinfo['total']) + '|' + str(signinfo['consecutive']) + '|' + str(signinfo['prop'])
-                return '`今天您已签到！已累计签到' + str(
-                    signinfo['total']) + '天，连续签到' + str(
-                        signinfo['consecutive']) + '天，上次签到时间：' + last + '，免断签卡剩余' + str(signinfo['prop']) + '张`' + tempstr
+                tempstr = '|' + str(signinfo['total']) + '|' + str(signinfo['consecutive']) + '|' + str(signinfo['prop']) + '|' + last
+                return '，今天您已签到！' + tempstr
             # 如果上次签到是昨天
             elif (datetime.now() + timedelta(days=-1)).strftime("%Y-%m-%d") == lasttime:
                 signinfo['total'] += 1
                 signinfo['consecutive'] += 1
-                tempstr = '|' + str(signinfo['total']) + '|' + str(signinfo['consecutive']) + '|' + str(signinfo['prop'])
+                tempstr = '|' + str(signinfo['total']) + '|' + str(signinfo['consecutive']) + '|' + str(signinfo['prop']) + '|' + last
+                #增加5个节操
+                userinfo = sqlMapper.getUserInfoByUserId(userid)
+                userinfo['jiecao'] += 5
+                sqlMapper.updateUserInfo(userinfo)
+                logger.info("New Data : " + str(userinfo))
             # 否则是断签
             else:
                 if signinfo['prop'] == 0:
                     signinfo['total'] += 1
                     signinfo['consecutive'] = 1
-                    tempstr = '|' + str(signinfo['total']) + '|1|0'
+                    tempstr = '|' + str(signinfo['total']) + '|1|0|' + last
                 else :
                     signinfo['total'] += 2
                     signinfo['consecutive'] += 2
                     signinfo['prop'] -= 1
-                    tempstr = '|' + str(signinfo['total']) + '|' + str(signinfo['consecutive']) + '|' + str(signinfo['prop'])
+                    tempstr = '|' + str(signinfo['total']) + '|' + str(signinfo['consecutive']) + '|' + str(signinfo['prop']) + '|' + last
+                #增加5个节操
+                userinfo = sqlMapper.getUserInfoByUserId(userid)
+                userinfo['jiecao'] += 5
+                sqlMapper.updateUserInfo(userinfo)
+                logger.info("New Data : " + str(userinfo))
             signinfo['record'] = tii
             # 更新数据库
             sqlMapper.updateSigninByUserId(signinfo)
             logger.info("New Data : " + str(signinfo))
-            return '`签到成功！已累计签到' + str(signinfo['total']) + '天，连续签到' + str(
-                signinfo['consecutive']) + '天，上次签到时间：' + last + '，免断签卡剩余' + str(signinfo['prop']) + '张`' + tempstr
+            return '，签到成功（节操+5）！' + tempstr
         except Exception as e:
             logger.error(e)
-            return '`签到异常，请联系管理员！`'
+            return '，签到异常，请联系管理员！' + "|Error|Error|Error|Error"

@@ -2,10 +2,10 @@
   "buildname" : "日蚀火法控制",
   "buildtype" : 1,
   "mask":{
-    "name":"日蚀协定(装备组)",
+    "name":"电力/戈兰(金装)",
     "core":"+1 技能分阶",
     "attribute1":"+10% 状态效果",
-    "attribute2":"",
+    "attribute2":"+12% 技能加速",
     "plugin1":"+12% 技能加速",
     "plugin2":""
   },

@@ -16,6 +16,7 @@ import logging
 import json
 import requests
 import random
+import time
 
 # init base configuration
 with open('config/config.json', 'r', encoding='utf-8') as f:
@@ -273,6 +274,7 @@ async def handleBtnClick(b: Bot, event: Event):
         userinfo = sqlMapper.getUserInfoByUserId(event.body['user_id'])
         signinfo = sqlMapper.getSigninByUserId(event.body['user_id'])
         user = await bot.client.fetch_user(event.body['user_id'])
+        channel = await bot.client.fetch_public_channel(event.body['target_id'])
         if userinfo['jiecao'] >= 35:
             userinfo['jiecao'] -= 35
             sqlMapper.updateUserInfo(userinfo)
@@ -280,9 +282,9 @@ async def handleBtnClick(b: Bot, event: Event):
             signinfo['prop'] += 1
             sqlMapper.updateSigninByUserId(signinfo)
             logger.info("Signin New Data : " + str(signinfo))
-            await user.send("兑换成功啦,现在有" + str(signinfo['prop']) + '张免断签卡和' + str(userinfo['jiecao']) + '节操！')
+            await b.client.send(channel, "兑换成功啦,现在你有" + str(signinfo['prop']) + '张免断签卡和' + str(userinfo['jiecao']) + '节操！', temp_target_id=event.body['user_id'])
         else:
-            await user.send("歪歪歪，你的节操余额不足~")
+            await b.client.send(channel, "歪歪歪，你的节操余额(" + str(userinfo['jiecao']) + ")不足~", temp_target_id=event.body['user_id'])
 
 # td2 vendor main
 @bot.command(regex='/周商|/zs')
@@ -302,11 +304,22 @@ async def zhoushang(msg: Message):
     if content[1] == "装备" or content[1] == "zb":
         await msg.reply(vendorTool.getGear(0))
         await msg.reply(vendorTool.getGear(20))
+        await msg.reply(vendorTool.getGear(40))
+        vendorTool.getGearExcel()
     if content[1] == "武器" or content[1] == "wq":
         await msg.reply(vendorTool.getWeapons(0))
         await msg.reply(vendorTool.getWeapons(20))
     if content[1] == "插件" or content[1] == "cj":
-        await msg.reply(vendorTool.getMods())
+        await msg.reply(vendorTool.getMods(0))
+        await msg.reply(vendorTool.getMods(30))
+
+# td2 vendor excel
+@bot.command(regex='下载周商')
+async def downloadVendor(msg: Message):
+    await reqFrontLogger(msg)
+    vendorTool.getVendorExcel()
+    url = await bot.client.create_asset('./TD2WeeklyVendor.xls')
+    await msg.reply(url,type=MessageTypes.FILE)
 
 # apply test role
 @bot.command(regex=r'申请测试资格.+', rules={Rule.is_bot_mentioned(bot)})
@@ -349,31 +362,59 @@ async def nameCard(msg: Message):
     await msg.reply(cm)
 
 # signin
-@bot.command(regex=r'/qd|/签到|签到')
-async def sign(msg: Message):
+@bot.command(regex=r'/me|/qd|/签到|签到')
+async def sign2(msg: Message):
     await reqFrontLogger(msg)
     guild = await bot.client.fetch_guild(msg.guild.id)
     user = await bot.client.fetch_user(msg.author_id)
     guildUser = await guild.fetch_user(msg.author_id)
-    logger.info('guildUser.roles:'+str(guildUser.roles))
-    notice,total,consecutive,prop = Signin().sign(msg.author.id,bot).split('|')
+    # 签到 获取签到信息
+    notice,total,consecutive,prop,last = Signin().sign(msg.author.id,bot).split('|')
+    c = Card(color='#FFCC00')
+    time_arr = time.localtime(guildUser.joined_at/1000) 
+    joinedTime = time.strftime("%Y-%m-%d %H:%M:%S", time_arr)
+    c.append({"type": "section","text": {"type": "kmarkdown",
+          "content": "> " + user.nickname+'#'+ user.identify_num + "\n加入频道时间：" + joinedTime + "\n上次签到时间：" + last
+        },"mode": "left","accessory": {"type": "image","src": user.avatar,"size": "sm"}})
+    # 计算计入频道天数
+    today = datetime.now()
+    joinDatetime = datetime.fromtimestamp(guildUser.joined_at/1000)
+    interval = today - joinDatetime
+    # 查询节操余额
+    userinfo = sqlMapper.getUserInfoByUserId(msg.author_id)
+    c.append({
+        "type": "section","text": {"type": "paragraph","cols": 3,
+        "fields": [
+            {"type": "kmarkdown","content": "**加入频道天数**\n"+str(interval.days)+"天"},
+            {"type": "kmarkdown","content": "**免断签卡**\n"+prop+"张"},
+            {"type": "kmarkdown","content": "**累计签到**\n"+total+"天"},
+            {"type": "kmarkdown","content": "**已连续签到**\n"+consecutive+"天"},
+            {"type": "kmarkdown","content": "**节操值**\n" + str(userinfo['jiecao'])}
+          ]
+        }
+      })
     if int(consecutive) == config['dtygk-role-days']:
         if int(config['dtygk-role-id']) not in guildUser.roles:
             await guild.grant_role(user, config['dtygk-role-id'])
-            notice += '，恭喜您获得荣誉称号：< 洞庭有归客 >'
+            c.append({"type": "context","elements": [{"type": "plain-text","content": "恭喜您获得荣誉称号：<洞庭有归客>"}]})
     if int(consecutive) < config['dtygk-role-days']:
         if int(config['dtygk-role-id']) not in guildUser.roles:
             days = config['dtygk-role-days']-int(consecutive)
-            notice += '，距离获得< 洞庭有归客 >称号还需连续签到' + str(days) + '天'
+            c.append({"type": "context","elements": [{"type": "plain-text","content": '距离获得<洞庭有归客>称号还需连续签到' + str(days) + '天'}]})
     if int(total) == config['xxfgr-role-days']:
         if int(config['xxfgr-role-id']) not in guildUser.roles:
             await guild.grant_role(user, config['xxfgr-role-id'])
-            notice += '，恭喜您获得荣誉称号：< 潇湘逢故人 >'
+            c.append({"type": "context","elements": [{"type": "plain-text","content": "恭喜您获得荣誉称号：<潇湘逢故人>"}]})
     if int(total) < config['xxfgr-role-days']:
         if int(config['xxfgr-role-id']) not in guildUser.roles:
             days = config['xxfgr-role-days']-int(total)
-            notice += '，距离获得< 潇湘逢故人 >称号还需累计签到' + str(days) + '天'
-    await msg.reply('@' + msg.author.nickname + notice)
+            c.append({"type": "context","elements": [{"type": "plain-text","content": '距离获得<潇湘逢故人>称号还需累计签到' + str(days) + '天'}]})
+    c.append({"type": "action-group","elements": [{"type": "button","theme": "primary",
+    "value": "buy1card",
+    "click": "return-val",
+    "text": {"type": "plain-text","content": "兑换1张免断签卡(-35节操)"}}]})
+    cm = CardMessage(c)
+    await msg.reply(cm)
 
 # auto signin
 @bot.on_event(EventTypes.JOINED_CHANNEL)
@@ -383,18 +424,28 @@ async def auto_signin(b: Bot, event: Event):
         guild = await bot.client.fetch_guild(config['guild_id'])
         user = await bot.client.fetch_user(event.body['user_id'])
         guildUser = await guild.fetch_user(event.body['user_id'])
-        notice,total,consecutive,prop = Signin().sign(event.body['user_id'],bot).split('|')
+        # 签到 获取签到信息
+        notice,total,consecutive,prop,last = Signin().sign(event.body['user_id'],bot).split('|')
+        c = Card(color='#FFCC00')
+        time_arr = time.localtime(guildUser.joined_at/1000) 
+        joinedTime = time.strftime("%Y-%m-%d %H:%M:%S", time_arr)
+        # 查询欢迎语
+        userinfo = sqlMapper.getUserInfoByUserId(event.body['user_id'])
+        welcomeWords = "来咯~";
+        if userinfo['welword'] != '':
+            welcomeWords = userinfo['welword']
+        c.append({"type": "section","text": {"type": "kmarkdown",
+          "content": "> " + user.nickname + welcomeWords + notice + "\n上次签到时间：" + last
+        },"mode": "left","accessory": {"type": "image","src": user.avatar,"size": "sm"}})
         if int(consecutive) == config['dtygk-role-days']:
             if int(config['dtygk-role-id']) not in guildUser.roles:
                 await guild.grant_role(user, config['dtygk-role-id'])
         if int(total) == config['xxfgr-role-days']:
             if int(config['xxfgr-role-id']) not in guildUser.roles:
                 await guild.grant_role(user, config['xxfgr-role-id'])
-        userinfo = sqlMapper.getUserInfoByUserId(event.body['user_id'])
-        if userinfo['welword'] != '':
-            await bot.client.send(channel,user.nickname + userinfo['welword'] + notice,type=MessageTypes.KMD)
-        else:
-            await bot.client.send(channel,user.nickname + "来咯~" + notice,type=MessageTypes.KMD)
+        c.append({"type": "context","elements": [{"type": "plain-text","content": "使用指令/me查看详细个人信息"}]})
+        cm = CardMessage(c)
+        await bot.client.send(channel,cm)
     if event.body['channel_id'] == '1753876426908171':
         guild = await bot.client.fetch_guild(config['guild_id'])
         user = await bot.client.fetch_user(event.body['user_id'])

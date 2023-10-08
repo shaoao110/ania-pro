@@ -1,0 +1,23 @@
+{
+    "AR Damage":"突击步枪伤害",
+    "LMG Damage":"轻机枪伤害",
+    "MMR Damage":"精确射手步枪伤害",
+    "Pistol Damage":"手枪伤害",
+    "Rifle Damage":"步枪伤害",
+    "Shotgun Damage":"霰弹枪伤害",
+    "SMG Damage":"冲锋枪伤害",
+    
+    "Health Damage":"生命值伤害",
+    "Damage to Armor":"对装甲的伤害",
+    "Critical Hit Chance":"暴击机率",
+    "Damage Out of Cover":"对离开掩体目标的伤害",
+    "Headshot Damage":"爆头伤害",
+    "Critical Hit Damage":"暴击伤害",
+    "Reload Speed":"装填速度",
+    "Stability":"稳定性",
+    "Accuracy":"准确性",
+    "Optimal Range":"有效射程",
+    "Magazine Size":"弹夹容量",
+    "Rate of Fire":"射速",
+    "Swap Speed":"切换速度"
+}

@@ -138,7 +138,7 @@ class SqlMapper():
     def getRecentRaidWeapon(self,player) -> object:
         cnct = mysql.connector.connect(host=dbconf['host'],port=dbconf['port'],user=dbconf['user'],password=dbconf['password'],database=dbconf['database'])
         cursor = cnct.cursor(dictionary=True)
-        sql = "select * from tb_raid_weapon where player like %(player)s order by droptime desc limit 20"
+        sql = "select * from tb_raid_weapon where player like %(player)s order by droptime desc limit 25"
         param = {"player":player}
         cursor.execute(sql,param)
         data = cursor.fetchall()
