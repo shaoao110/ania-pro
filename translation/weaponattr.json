@@ -19,5 +19,6 @@
     "Optimal Range":"有效射程",
     "Magazine Size":"弹夹容量",
     "Rate of Fire":"射速",
-    "Swap Speed":"切换速度"
+    "Swap Speed":"切换速度",
+    "Armor on Kill":"击杀回复装甲"
 }
