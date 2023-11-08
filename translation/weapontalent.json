@@ -7,7 +7,7 @@
     "Fast Hands":"快手族",
     "Finisher":"终结者",
     "First Blood":"第一滴血",
-    "Flatline":"",
+    "Flatline":"停搏",
     "Frenzy":"疯狂",
     "Future Perfect":"未来完成式",
     "Ignited":"点燃",
@@ -39,6 +39,7 @@
     "Unhinged":"精神错乱",
     "Unwavering":"屹立不摇",
     "Vindictive":"报复之心",
+    "Stabilize":"稳定之手",
     
     "Perfectly Overflowing":"完美满溢",
     "Perfect Allegro":"完美快板",
@@ -47,8 +48,8 @@
     "Perfectly Close & Personal":"完美短兵相接",
     "Perfectly Ignited":"完美点燃",
     "Perfectly Near Sighted":"完美短视近利",
-    "Perfectly in Sync":"完美同步伤害",
-    "Futrue Perfection":"完美未来",
+    "Perfectly In Sync":"完美同步伤害",
+    "Future Perfection":"完美未来",
     "Perfectly Accurate":"完美精准",
     "Perfect Flatline":"完美停搏",
     "Perfectly Steady Handed":"完美双手沉稳",
@@ -84,10 +85,11 @@
     "Perfect Distance":"完美距离",
     "Perfect Jazz Hands":"完美爵士手",
     "Perfect Pummel":"完美拳拳到肉",
-    "Perfectly Vindictive":"完美报复之心",
+    "Perfect Vindictive":"完美报复之心",
     "Perfect Outsider":"完美局外人",
     "Perfectly Measured":"完美精密计算",
     "Perfectly Strained":"完美压力使然",
     "Hidden Rock":"雪中送炭",
-    "Perfect Killer":"完美杀手"
+    "Perfect Killer":"完美杀手",
+    "Perfect Stabilize":"完美稳定之手"
 }
