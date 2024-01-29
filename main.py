@@ -24,6 +24,8 @@ with open('config/config.json', 'r', encoding='utf-8') as f:
 # load living room
 with open('config/livingroom.json', 'r', encoding='utf-8') as f:
     livingroom = json.load(f)
+with open('translation/palnumber.json', 'r', encoding='utf-8') as f:
+    palnumber = json.load(f)
 
 # init Bot
 bot = Bot(token=config['token'])
@@ -168,10 +170,10 @@ async def pla(msg: Message):
     await reqFrontLogger(msg)
     c = Card(Module.Header('[PLA]战队卡片'), color='#ff9900')
     c.append(Module.Divider())
-    c.append(Module.Section({"type":"kmarkdown","content":"主队队名：`CPLASFOFCHINA`  (未开放纳新)"}))
-    c.append(Module.Section({"type":"kmarkdown","content":"二队队名：`Peanut Agents`  (无要求，暂满)"}))
-    c.append(Module.Section({"type":"kmarkdown","content":"三队队名：`Peanuts Agent`  (无要求，暂满)"}))
-    c.append(Module.Section({"type":"kmarkdown","content":"四队队名：`Peanute Agent`  (无要求)"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"主队队名：`CPLASFOFCHINA`  (2000级以上且长期在线)"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"二队队名：`Peanut Agents`  (无要求，将满)"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"三队队名：`Peanuts Agent`  (无要求，将满)"}))
+    c.append(Module.Section({"type":"kmarkdown","content":"四队队名：`PeanutsAgentF`  (无要求)"}))
     c.append(Module.Section({"type":"kmarkdown","content":"QQ群号：`136932781`"}))
     c.append(Module.Section({"type":"kmarkdown","content":"KOOK语音频道ID：`29278287`"}))
     c.append(Module.Section({"type":"kmarkdown","content":"开挂、速成玩家请勿入队，谢谢合作！入队审核，其他咨询(met)1595665465(met)"}))
@@ -713,6 +715,52 @@ async def modifyRaidWeapon(msg: Message):
             }))
         cm = CardMessage(c)
         await msg.ctx.channel.send(cm)
+
+bot.command(regex='/pal.+')
+async def queryPal(msg: Message):
+    await reqFrontLogger(msg)        
+    content = msg.content.split(' ')
+    targetPal = content[1]
+    url = "https://palworld.caimogu.cc/breed?seed1=0&seed2=0&result=" + palnumber[targetPal]
+    page=1
+    seed1,seed2,target = queryPalpage(url,page)
+    c = Card(Module.Header('幻兽帕鲁合成表查询'), color='#ff9900')
+    c.append(Module.Context('Ania-pro ' + config['version'] + ' 使用方法：/pal [合成目标帕鲁]'))
+    c.append(
+            Module.Section({
+                "type":"paragraph",
+                "cols":3,
+                "fields": [{
+                    "type": "kmarkdown",
+                    "content": "**父系1**" + seed1
+                }, {
+                    "type": "kmarkdown",
+                    "content": "**父系2**" + seed2
+                }, {
+                    "type": "kmarkdown",
+                    "content": "**配种结果**" + target
+                }]
+            }))
+    cm = CardMessage(c)
+    await msg.ctx.channel.send(cm)
+    
+def queryPalpage(self,url,page):
+    seed1 = ""
+    seed2 = ""
+    target = ""
+    resp = json.loads(str(res.text))
+    dataList = resp['data']['list']
+    for index in range(len(dataList)):
+        seed1 += '\n' + dataList[index]['s1_name']
+        seed2 += '\n' + dataList[index]['s2_name']
+        target += '\n' + dataList[index]['ret_name']
+    if resp['data']['hasMore'] == 1:
+        page = page + 1
+        seed3,seed4,target2 = queryPalpage(url,page)
+        seed1 = seed1 + seed3
+        seed2 = seed2 + seed4
+        target = target + target2
+    return seed1,seed2,target
 
 bot.run()
 
